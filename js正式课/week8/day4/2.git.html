@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /* 
+    git 
+    分布式版本控制系统
+    linux为了能够让团队成员共享代码发明了git
+    git会将本地作为一个版本控制系统，只有想要共享代码的时候，才会推送到远程服务当中
+    git是通过【二进制流】进行传输代码的，如果没有全部接收到文件，不会有残留文件出现在本地，svn是通过文件进行传输，所以git传输速度更快
+
+    git分为三个区：
+        工作区【本地写代码的地方】     git add . 将工作区的代码转到暂存区
+        暂存区【暂时保存内容到git，不会进行记录，和ctrl+s差不多】  git commit -m'备注信息'  将暂存区的代码转到历史区
+        历史区【将暂存区的代码生成一个git版本】 
+    将本地的代码共享  => 通过git命令 => 推送到远程仓库
+    git push origin 【仓库名】 master【主分支】
+
+    【分支】
+    git上面的分支可以存放不同的代码，一般我们用分支进行版本迭代
+    创建分支 git branch xxx【分支名】
+    查看分支 git branch
+    删除分支 git branch -D xxx
+    跳转分支 git checkout xxx
+
+    【分支创建并跳转】
+    创建完分支立刻跳转过去 git branch -b xxx
+    合并代码：git merge xxx【分支】    将xxx分支的代码合并到当前的分支
+
+    【切换分支注意】
+    创建完分支后，会以当前分支为基本，拷贝一模一样的代码到新分支上
+    在其他分支上，如果没有提交，直接切换，会将代码全部带到新的分支上
+    切换分支的时候一定要注意提交到历史区，否则代码会丢失，或者通过这个命令来git stash 【将代码放到一个空置的区域】来解决；通过git stash pop 【将空置区域的代码拿到我当前的分支】
+
+    【合并分支注意】
+    合并代码的时候会出现冲突，一般情况下是因为操作同一个文件造成的，【操作不同的文件不会造冲突】
+    选择之前的代码或者现在修改的代码，或者两者都要
+
+    【注意】
+    创建一个分支就需要推送到远程，让远程知道你本地有这个分支
+
+    tag【标记、标识】
+    将本地的文件打包发送到线上
+    git tag xxx   //xxx【tag名称】  将本地的代码打个包
+    git tag --list  //查看你的tag目录
+
+    git status
+    红色：此时文件在工作区
+    绿色：此时文件在暂存区
+    working tree clean  --> 文件都提交到历史区
+
+
+    svn
+    集中式版本控制系统
+    svn只有一个中央服务器，如果断网，或者中央服务器出现故障，作为客户端无法实时的取到相对应的项目代码。
+
+    git和svn的区别？
+    
+
+
+
+     */
+     
+</script>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // node 中的模块分为三类：内置模块、第三方模块、自定义模块
+
+    // 对于我们来说，一个JS文件就是一个模块
+    // 珠峰的模块：http://zhufengpeixun.com/docs/html/node%E5%9F%BA%E7%A1%80/%E6%A8%A1%E5%9D%97.html
+    // commonJS规范  AMD  CMD
+    // node是遵循commonJS规范的 
+
+    // node 清屏命令是cls ；git清屏命令是clear
+
+    // console.log(module); //当前模块的一些信息
+    // console.log(__dirname); // 当前文件夹的绝对路径
+    // console.log(__filename); //当前文件的绝对路径
+    // console.log(exports===module.exports);
+    // //是指向同一个地址
+    // console.log(require);require是个函数，作用是获取对应的模块
+    // node中的全局变量是global，不是window
+    // 一个模块就是一个私有作用域
+    // require module ...全是属于这个模块的私有变量，不属于global
+    // let qqq=require('./a.js');[require中参数是另一个模块的路径] console.log(qqq)[这个qqq是个空对象，原因就是a.js中没有导出文件]
+    // require 可以让引用的文件执行，但是不能直接获取文件中的变量，因为每一个文件对于node来说都会形成一个 私有作用域
+
+
+    // 位于exports下边的代码仍然是可以执行的
+    // exports 是不支持直接修改自己的指向的
+    // module.exports 可以支持我们直接修改对象的地址，也支持我们直接用值类型覆盖；当有两个及多个module.exports时 最下边的那个才是最终起作用的
+
+    //module.exports的权重高于exports
+
+
+
+
+    // 自定义模块的导入和导出
+    // 导入：let 变量 = require(自定义模块的相对路径)
+    // 导出：module.exports.name = 'zf'   --->  {name:'zf'}
+    //      module.exports = {name:'zf'}    --->  {name:'zf'}
+    //      以上两种的方式的导出结果是一样的
+    //      exports = {name:'zf'} 这种写法是不起作用的
+    //      module.exports 还支持直接用 值类型 覆盖   => module.exports = 123;   支持这种写法
+
+    // 一个模块中，有 require  module  _ _dirname  _ _filename  exports;这些只有在node中执行时才是被定义过的变量，在浏览器中执行时，是没有这些变量的
+
+    // es6的文件引入方式是由导出方式决定的
+    // 1、若导出方式是 export default obj；
+    // 那么我们引入方式就是import自定义变量名from './b.js'
+    // 2、若导出方式是 export {obj}
+    // 那么我们的引入方式就是 import {obj} from './b.js'；引入的变量名需要跟导出的变量名保持一致 
+    // 3、import * as 自定义变量名 from './b.js'
+    // 这种引入方式是把b中的所有导出都放到一个自定义变量名的对象中
+
+
+
+
+    // 总结
+    // 模块的导入和导出，目前一共有两种方式
+
+    // 1、node的模块导入导出
+    // node 导入：let 变量 = require(要导入模块的路径)
+    // node 导出：module.exports 和 exports 这两种方式导出；第一种方式支持地址覆盖，也支持用值类型覆盖；第二种方式只能老实的用打点方式。
+    // node方式的导入和导出只能在node环境中执行，不能在浏览器环境下执行
+
+    // 2、es6的模块导入和导出
+    // 引入入口文件(a.js)，需要在script标签上加上type = "module" 这个属性
+    // es6 导入：有三种方式
+    //  1)、 import {变量名} from './b.js' ;这个变量名必须跟导出的属性名保持一致
+    //      这种导入方式需要的导出方式是 export {obj:obj}
+    //  2)、 import 自定义变量名 from './b.js'; 
+    //      这种导入方式需要的导出方式是 export default obj (变量名)
+    //  3)、 import * as 自定义变量名 from './b.js';
+    //      这种导入方式是把b中的所有导出，都放在自定义变量名的对象中
+    //  4)、 import 自定义变量名,{obj,str} from './b.js';
+    //      这种导入方式需要的导出方式是 《export default 变量》 + 《export {obj,str,num}》
+    // 以上是es6的导入和导出，需要在浏览器环境才能运行，不能在node环境下运行
+
+
+
+    // node的module.exports 导出可以写多个吗？  可以，只不过只有最下边的起作用
+    // es6的export 导出可以写多个吗？  可以，并且都起作用
+
+</script>

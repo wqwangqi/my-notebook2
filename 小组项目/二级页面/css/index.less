@@ -1,0 +1,825 @@
+@color: #666;
+@colorFont: #999;
+@background-color: #f2f2f2;
+@img: url("../img/spirit.png");
+@radius: 0 0 5px 5px;
+@border: 1px solid #ddd;
+@hoverColor: #cdd1bb;
+@colorMost: #f07;
+@fontSize: 10px;
+
+//头部
+header {
+  background-color: @background-color;
+  border-bottom: 1px solid #ddd;
+  #main-hea {
+    width: 1200px;
+    margin: 0 auto;
+    .header-first {
+      .header_right {
+        float: right;
+        li {
+          float: left;
+          position: relative;
+          color: @color;
+          font-size: 10px;
+          margin: 0 10px 0 0;
+
+          .my_order {
+            background: @img -4px 249px;
+            padding-left: 20px;
+
+          }
+
+          .shopping_cart {
+            background: @img -4px 357px;
+            padding-left: 25px;
+          }
+        }
+        .s3 .shopping_cart_text {
+          color: @colorFont;
+          display: none;
+          z-index: 100;
+          position: absolute;
+          left: -100px;
+          background-color: @background-color;
+          padding: 18px 0;
+          height: 18px;
+          line-height: 18px;
+          text-align: center;
+          width: 200px;
+          border-radius: @radius;
+          border: @border;
+          border-top: none;
+
+        }
+        .s3:hover {
+          .shopping_cart_text {
+            display: block;
+          }
+        }
+        .customer_service {
+          margin-left: -5px;
+          .customer_service_icon {
+            position: absolute;
+            background: @img -4px 308px;
+            width: 8px;
+            height: 5px;
+            top: 50%;
+            margin-top: -2.5px;
+            right: 14px;
+          }
+          .customer_service_list {
+            position: absolute;
+            left: -7px;
+            display: none;
+            background-color: @background-color;
+            border-radius: @radius;
+            border: @border;
+            border-top: none;
+            li {
+              margin-right: 0;
+              padding-left: 5px;
+              width: 100px;
+
+            }
+
+          }
+        }
+        .customer_service:hover {
+          .customer_service_list {
+            display: block;
+          }
+        }
+        .s4 .customer_service_list li:hover {
+          background-color: @hoverColor;
+        }
+        .s5 {
+          margin-right: 13px;
+          .business_backstage {
+            display: inline-block;
+            padding: 0 5px 0 25px;
+            background: @img -4px 217px;
+
+          }
+          .business_backstage_list {
+            position: absolute;
+            display: none;
+            background-color: @background-color;
+
+            left: -12px;
+            border-radius: @radius;
+            border: @border;
+            border-top: none;
+            li {
+              width: 100px;
+              margin-right: 0;
+              text-align: center;
+            }
+
+          }
+
+          .icon_shop {
+            position: absolute;
+            background: @img -4px 308px;
+            width: 8px;
+            height: 5px;
+            top: 50%;
+            margin-top: -2.5px;
+            right: -8px;
+
+          }
+        }
+        .s5:hover {
+          .business_backstage_list {
+            display: block;
+          }
+        }
+      }
+      .s5 .business_backstage_list li:hover {
+        background-color: @hoverColor;
+      }
+
+      .header_nav_left {
+        display: inline-block;
+        margin-left: 12px;
+        a {
+          background: @img -4px -241px no-repeat;
+          padding-left: 20px;
+        }
+      }
+      a {
+        padding: 0 20px 0 10px;
+        height: 30px;
+        line-height: 30px;
+        color: @color;
+        font-size: @fontSize;
+
+      }
+    }
+  }
+}
+
+//nav
+#mgj-ejym-nav {
+  width: 100%;
+  height: 47px;
+  background: #f46;
+  margin-top: 1px;
+  #mainnav {
+    width: 1200px;
+    height: 47px;
+    margin: 0 auto;
+    #kq-nav-one {
+      width: 130px;
+      height: 47px;
+      float: left;
+      img {
+        margin-top: 10px;
+      }
+    }
+    #kq-nav-two {
+      float: left;
+      width: 216px;
+      height: 41px;
+      margin-left: 10px;
+      a {
+        margin-left: 47px;
+        width: 40px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin-top: 8px;
+        color: white;
+        font-size: 14px;
+      }
+      #kq-nav-sy {
+        font-size: 15px;
+        float: left;
+        border-bottom: 3px solid white;
+      }
+      #kq-nav-jjsx {
+        float: left;
+        width: 65px;
+      }
+      #kq-nav-jjsx:hover {
+        border-bottom: 3px solid white;
+      }
+      div {
+        width: 1200px;
+        height: 2000px;
+        border: 2px solid purple;
+        display: none;
+        margin-top: 50px;
+        position: absolute;
+        left: 340px;
+      }
+
+      div.active {
+        display: block;
+      }
+    }
+    #kq-nav-three {
+      float: right;
+      ul {
+        li {
+          float: left;
+          margin: 10px 30px 0 0;
+          .kq_xbt1 {
+            display: block;
+            background: url("../img/mgj_kq-xbt.png") no-repeat;
+            background-position: 0 0;
+            width: 28px;
+            height: 28px;
+          }
+          .kq_xbt2 {
+            display: block;
+            background: url("../img/mgj_kq-xbt.png") no-repeat;
+            background-position: 0 -35px;
+            width: 28px;
+            height: 28px;
+          }
+          .kq_xbt3 {
+            display: block;
+            background: url("../img/mgj_kq-xbt.png") no-repeat;
+            background-position: 0 -71px;
+            width: 28px;
+            height: 28px;
+          }
+          i {
+            float: left;
+          }
+          span {
+            float: left;
+            margin-top: 3px;
+            font-size: 14px;
+            color: white;
+            margin-left: 5px;
+          }
+        }
+        .chzhdj {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+//轮播图
+#mgj-center {
+  #mgj_main {
+    width: 1200px;
+    margin: 20px auto;
+    #kq-LBT {
+      width: 960px;
+      height: 402px;
+      overflow: hidden;
+      position: relative;
+      #kq-swiper {
+        position: absolute;
+        height: 100%;
+        div {
+          float: left;
+          width: 960px;
+          height: 402px;
+          background: url("../img/default.gif") no-repeat center center;
+          img {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+          }
+        }
+      }
+      #kq-focus {
+        width: 120px;
+        height: 26px;
+        background: #fff;
+        position: absolute;
+        left: 420px;
+        top: 360px;
+        border-radius: 20px;
+        li {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: #CCC1C0;
+          float: left;
+          margin: 3px 2px 0 2px;
+        }
+        li.selected {
+          background: url("../img/mgj-kq-lbt-point.png") no-repeat center center;
+          width: 20px;
+          height: 20px;
+        }
+      }
+      .left {
+        display: none;
+        background: url("../img/mgj-kq-lbt-xbt.png") no-repeat;
+        background-position: 0 0;
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        top: 184px;
+        left: 15px;
+        opacity: 0.5;
+      }
+      .right {
+        display: none;
+        background: url("../img/mgj-kq-lbt-xbt.png") no-repeat;
+        background-position: -50px 0;
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        top: 184px;
+        right: 15px;
+        opacity: 0.5;
+      }
+    }
+    .mgj_xt-center {
+      width: 217px;
+      height: 400px;
+      float: right;
+      margin-top: -401px;
+      border: 1px solid #ddd;
+      a {
+        margin-left: 14px;
+        img {
+          margin-top: 13px;
+        }
+      }
+    }
+  }
+}
+
+//商品栏
+/*#kuang {
+  #kq-fk {
+    width: 1200px;
+    height: 55px;
+    background: rgba(0, 0, 0, 0.82);
+    margin: 0 auto;
+    position: relative;
+  }
+  .shopL {
+    .yellow-shop {
+      width: 150px;
+      height: 55px;
+      background: orange;
+      position: absolute;
+      left: 880px;
+      top: 521px;
+      z-index: 50;
+    }
+    .SJ-shop {
+      border-width: 10px;
+      border-style: solid;
+      border-color: orange transparent transparent transparent;
+      width: 0;
+      position: absolute;
+      left: 940px;
+      top: 576px;
+
+    }
+  }
+}
+
+#mgj-kq-shop {
+  #main-shop {
+    width: 1200px;
+    height: 55px;
+    margin: 0 auto;
+    overflow: hidden;
+    .mgj-kq-shoplb {
+      position: absolute;
+      top: 531px;
+      left: 0;
+      div {
+        width: 100px;
+        height: 55px;
+        float: left;
+        overflow: hidden;
+        a {
+          width: 50px;
+          height: 200px;
+          background: gold;
+
+          p {
+            display: inline-block;
+            z-index: 9999;
+            color: grey;
+          }
+        }
+      }
+    }
+  }
+}*/
+
+//商品
+.shangpinxq {
+  .shangpinmain {
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto;
+    h3 {
+      font-size: 22px;
+      color: #333;
+      padding-top: 10px;
+      font-weight: normal;
+    }
+  }
+}
+
+.box-main {
+  width: 1240px;
+  height: 1000px;
+  margin: 0 auto;
+  #box {
+    width: 1000px;
+    height: 2142px;
+    margin: 20px 0 0 20px;
+
+    position: relative;
+    #aaaa {
+      li {
+        width: 470px;
+        height: 218px;
+        border: 1px solid #ccc;
+        display: inline-block;
+        margin-right: 19px;
+        margin-bottom: 19px;
+        .box-a1 {
+          height: 190px;
+          width: 190px;
+          margin: 13px;
+          /*img{
+            background: url("../img/default.gif") no-repeat center center;
+            width: 34px;
+            height: 34px;
+            opacity: 0;
+          }*/
+        }
+        .box-a2 {
+          height: 186px;
+          width: 232px;
+          padding: 15px;
+          padding-left: 5px;
+          display: block;
+          float: right;
+          //position: absolute;
+          //top: 0;
+          //left: 232px;
+          .textHide {
+            color: #333;
+            font-size: 18px;
+            height: 18px;
+            line-height: 1.2;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px dotted #ccc;
+          }
+          .priceText {
+            color: #424242;
+            line-height: 32px;
+            height: 32px;
+            font-size: 14px;
+            overflow: hidden;
+            .cur {
+              font-size: 25px;
+              font-weight: 500;
+              color: #fe4566;
+              margin: 0 5px;
+            }
+            .old {
+              font-size: 14px;
+              color: #999;
+            }
+          }
+          .statusBar {
+            position: relative;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #aaa;
+          }
+          .buyBtn {
+            margin-top: 20px;
+            .buy-btn {
+              width: 110px;
+              height: 32px;
+              font-size: 17px;
+              line-height: 32px;
+              border-radius: 3px;
+              text-align: center;
+              display: inline-block;
+              box-sizing: border-box;
+              color: #fff;
+              background: #fe4566;
+            }
+            .left-text {
+              font-size: 14px;
+              color: #aaa;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//尾部
+.wbwq {
+  margin-top: 1950px;
+}
+
+#footer-my #main-f1 {
+  width: 1190px;
+  margin: 0 auto;
+}
+
+#footer-my #main-f1 div {
+  float: left;
+  width: 297.5px;
+  height: 100px;
+  border-bottom: 2px solid red;
+}
+
+#footer-my #main-f1 div h3 {
+  font-size: 14px;
+  color: #666;
+  height: 25px;
+  line-height: 25px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+#footer-my #main-f1 div ul li {
+  display: inline-block;
+  margin-right: 50px;
+}
+
+#footer-my #main-f1 div ul li a {
+  width: 80px;
+  height: 20px;
+  font-size: 12px;
+  color: #999;
+}
+
+#footer-my #main-f1 div ul li a:hover {
+  color: red;
+}
+
+#footer-my #main-f1 div ul li span {
+  font-size: 12px;
+  color: #999;
+}
+
+#footer-my #main-f1 .footer-ewm ul li {
+  margin-right: 40px;
+  position: relative;
+  cursor: pointer;
+}
+
+#footer-my #main-f1 .footer-ewm ul li img {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: -20px;
+  top: 30px;
+  display: none;
+}
+
+#footer-my #main-f1 div ul li:hover img {
+  display: block;
+}
+
+#contact #main-f2 {
+  width: 1190px;
+  margin: 0 auto;
+}
+
+#contact #main-f2 .company {
+  height: 25px;
+  line-height: 25px;
+}
+
+#contact #main-f2 ul li {
+  float: left;
+  margin-right: 30px;
+}
+
+#contact #main-f2 ul li a {
+  font-size: 14px;
+  color: #333;
+  height: 20px;
+  line-height: 20px;
+}
+
+#contact #main-f2 ul li a:hover {
+  color: pink;
+}
+
+#contact #main-f2 li p {
+  font-size: 14px;
+  color: #333;
+  margin-top: 5px;
+  width: 400px;
+  height: 20px;
+  line-height: 20px;
+}
+
+#contact #main-f2 .footer-tel div {
+  display: inline-block;
+  font-size: 12px;
+  color: #999;
+  border-right: 1px solid #999;
+  padding-right: 5px;
+  height: 20px;
+  line-height: 20px;
+}
+
+#contact #main-f2 .footer-tel div a {
+  color: #999;
+}
+
+//固定定位
+#fixed {
+  width: 30px;
+  height: 943px;
+  background: #202020;
+  position: fixed;
+  right: 0;
+  top: 0;
+  .margin-fixed {
+    margin-top: 70px;
+    .height-fixed {
+      text-align: center;
+      width: 30px;
+      height: 83px;
+
+      .border-fixed-1 {
+        width: 20px;
+
+        border-bottom: 1px solid white;
+        margin: 0 auto;
+        a {
+          div {
+            display: block;
+            width: 14px;
+            font-size: 12px;
+            color: #fff;
+            margin: 3px 0 0 3px;
+            padding-bottom: 10px;
+          }
+          #fixed-padding-price {
+            height: 30px;
+            padding-bottom: 16px;
+          }
+          img {
+            padding-top: 10px;
+          }
+          .img-margin-fixed {
+            margin-left: 3px;
+          }
+        }
+      }
+    }
+    div:hover {
+      background: orangered;
+    }
+    .padding-fixed {
+      height: 75px;
+    }
+    span {
+      display: block;
+      //margin: 10px 0 0 6px;
+      width: 30px;
+      height: 32px;
+      text-align: center;
+      margin-top: 8px;
+      border-bottom: 1px solid white;
+      position: relative;
+      div {
+        position: absolute;
+        left: -176px;
+        top: -23px;
+        display: none;
+        i {
+          display: block;
+          background: url("../img/123-123.png") no-repeat center center;
+          width: 181px;
+          height: 200px;
+        }
+      }
+    }
+    span:hover div {
+      display: block;
+    }
+    .fixed-top {
+      position: fixed;
+      right: 0;
+      bottom: 10px;
+      width: 30px;
+      display: none;
+      div {
+        width: 20px;
+        border-top: 1px solid white;
+        margin-left: 5px;
+        padding-top: 5px;
+        a {
+          img {
+            margin-left: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.fixed-display {
+  position: fixed;
+  right: 0;
+  top: 71px;
+  background: #000;
+  width: 30px;
+  height: 80px;
+  display: none;
+  .border-fixed-1 {
+    margin-left: 8px;
+    padding-top: 5px;
+    div {
+      font-size: 12px;
+      color: white;
+      display: block;
+      height: 46px;
+      width: 20px;
+    }
+  }
+}
+
+.fixed-display:hover {
+  background: orangered;
+}
+
+@media all and (max-width: 1275px) {
+  #fixed {
+    display: none;
+    transition: all 3s;
+  }
+
+  .fixed-display {
+    display: block;
+  }
+  #fixed:hover {
+    display: block;
+  }
+}
+
+//侧边
+.aside {
+  width: 215px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 14px;
+  position: absolute;
+  left: 50%;
+  top: 590px;
+  margin-left: 385px;
+  .banner {
+    width: 80%;
+    margin: 0 auto 20px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  .category-list {
+    width: 80%;
+    margin: 0 auto;
+    li {
+      width: 50%;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 800;
+      float: left;
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+    }
+  }
+   .qr-code-box {
+    width: 162px;
+    margin: 0 auto;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 162px;
+    }
+    .qr-text {
+      font-size: 12px;
+      color: #666;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+#fixed {
+  width: 30px;
+  height: 943px;
+  background: #202020;
+  position: fixed;
+  right: 0;
+  .margin-fixed {
+    margin-top: 70px;
+    .height-fixed {
+      text-align: center;
+      width: 30px;
+      height: 83px;
+
+      .border-fixed-1 {
+        width: 20px;
+
+        border-bottom: 1px solid white;
+        margin: 0 auto;
+        a {
+          div {
+            display: block;
+            width: 14px;
+            font-size: 12px;
+            color: #fff;
+            margin: 3px 0 0 3px;
+            padding-bottom: 10px;
+          }
+          #fixed-padding-price {
+            height: 30px;
+            padding-bottom: 16px;
+          }
+          img {
+            padding-top: 10px;
+          }
+          .img-margin-fixed {
+            margin-left: 3px;
+          }
+        }
+      }
+    }
+    div:hover {
+      background: orangered;
+    }
+    .padding-fixed {
+      height: 75px;
+    }
+    span {
+      display: block;
+      //margin: 10px 0 0 6px;
+      width: 30px;
+      height: 32px;
+      text-align: center;
+      margin-top: 8px;
+      border-bottom: 1px solid white;
+      position: relative;
+      div {
+        position: absolute;
+        left: -176px;
+        top: -23px;
+        display: none;
+        i {
+          display: inline-block;
+          background: url("../img/123-123.png");
+          width: 181px;
+          height: 200px;
+        }
+      }
+    }
+    span:hover div {
+      display: block;
+    }
+    .fixed-top {
+      position: fixed;
+      right: 0;
+      bottom: 10px;
+      width: 30px;
+      display: none;
+      div {
+        width: 20px;
+        border-top: 1px solid white;
+        margin-left: 5px;
+        padding-top: 5px;
+        a {
+          img {
+            margin-left: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+  .fixed-display {
+    position: fixed;
+    right: 0;
+    top: 71px;
+    background: #000;
+    width: 30px;
+    height: 80px;
+    display: none;
+    .border-fixed-1 {
+      margin-left: 8px;
+      padding-top: 5px;
+      div {
+        font-size: 12px;
+        color: white;
+        display: block;
+        height: 46px;
+        width: 20px;
+      }
+    }
+  }
+
+
+
+.fixed-display:hover {
+  background: orangered;
+}
+
+@media all and (max-width: 1275px) {
+  #fixed {
+    display: none;
+    transition: all 3s;
+  }
+
+  .fixed-display {
+    display: block;
+  }
+  #fixed:hover {
+    display: block;
+  }
+}

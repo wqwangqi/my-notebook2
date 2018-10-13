@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <!--<script>-->
+        <!--less = {-->
+            <!--env: "development",-->
+            <!--poll: 1000-->
+        <!--}-->
+    <!--</script>-->
+    <!--<script src="js/less-2.5.3.min.js"></script>-->
+    <!--<script>-->
+        <!--less.watch();-->
+    <!--</script>-->
+</head>
+<body>
+<div id="fixed">
+    <div class="margin-fixed">
+        <div class="height-fixed">
+            <div class="border-fixed-1">
+                <a href="" class="GD-bg1">
+                    <img src="img/MGJ-XBT56_03.png" alt="" class="img-margin-fixed">
+                    <div>购物车</div>
+                </a>
+            </div>
+        </div>
+        <div class="height-fixed">
+            <div class="border-fixed-1">
+                <a href="" class="GD-bg2">
+                    <img src="img/MGJ-XBT3333_03.png" alt="">
+                    <div>优惠券</div>
+                </a>
+            </div>
+        </div>
+        <div class="height-fixed padding-fixed">
+            <div class="border-fixed-1">
+                <a href="" class="GD-bg3">
+                    <img src="img/MGJ-XBT57_09.png" alt="">
+                    <div id="fixed-padding-price">钱包</div>
+                </a>
+            </div>
+        </div>
+        <div class="height-fixed padding-fixed">
+            <div class="border-fixed-1">
+                <a href="" class="GD-bg4">
+                    <img src="img/MGJ-XBT56_06.png" alt="">
+                    <div>足迹</div>
+                </a>
+            </div>
+        </div>
+        <span>
+                <a href="" class="GD-bg5">
+                    <img src="img/MGJ-XBT-99..png" alt="">
+                </a>
+                <div>
+                   <i></i>
+                </div>
+        </span>
+        <div class="fixed-top">
+            <div>
+                <a href="">
+                    <img src="img/MGJ-XBT_fixed-top_01_02.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="js/utils.js"></script>
+<script>
+    let fixedtop = document.querySelector('.fixed-top');
+    let bok = false;
+    window.onscroll = function () {
+        if (bok) {
+            clearInterval(fixedtop.timer)
+        }
+        bok = true;
+        let winScroll = utils.win('scrollTop');
+        let winClient = utils.win('clientHeight');
+        if (winScroll >= winClient) {
+            fixedtop.style.display = 'block';
+        } else {
+            fixedtop.style.display = 'none';
+        }
+    };
+    fixedtop.onclick = function () {
+        let winScroll = utils.win('scrollTop');
+        this.timer = setInterval(() => {
+            winScroll -= 100;
+            if (winScroll <= 0) {
+                clearInterval(this.timer);
+                utils.win('scrollTop', 0);
+                return;
+            }
+            utils.win('scrollTop', winScroll);
+            bok = false;
+        }, 200);
+    };
+</script>
