@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    /* 
+    promise是es6当中的一个类
+
+    主要功能是用来管控异步操作
+
+    为什么要使用promise？  连续多个异步请求会形成回调地狱，主要还是不方便维护，会有很多的层级嵌套，代码不美观
+
+    generter函数 async await axios fetch 都是建立在promise的基础之上
+
+    promise当中有三种状态：pending【初始化】、fulfilled【成功态】、rejected【失败态】
+    promise机制：当promise当中的异步程序发生成功或者失败，执行then【promise原型上的方法，供实例来调用】当中相对应的方法，成功或者失败都会只进行一次【要么成功要么失败】
+    注意：promise当中的then方法本身是同步执行，里面的方法是异步执行
+     */
+
+    /* let p1 = new Promise((resolve,reject)=>{
+        //  直接同步执行也行
+        resolve(100);
+        reject(200);
+     })
+    //  then方法本身是同步执行的，但是then当中的两个方法是属于异步执行
+     p1.then(res=>{
+         console.log(res);
+     },reg=>{
+         console.log(reg);
+     })
+     console.log(500); */
+
+
+
+    let p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            Math.random() > 0.5 ? resolve(100) : reject(200);
+        }, 0)
+    })
+    p1.then(res => {
+        console.log(res);
+    }, rej => {
+        console.log(rej);
+    })
+    // p1.then这个方法默认会返回成功状态的promise实例
+    // 如果想要p1.then返回失败状态的promise实例，需要两个条件触发
+    //  1.p1.then方法会有程序报错
+    //  2.手动返回一个promise实例执行失败状态
+    // p2=>p1.then执行后返回一个promise实例
+    p2.then(res=>{
+        console.log(res);
+    }),rej =>{
+        console.log(rej);
+    }
+    console.log(500);
+</script>
