@@ -43,5 +43,5 @@ ul li:nth-child(2n+1){
     background: rgb(182, 33, 182);
 }
 ul li:hover{
-    background: rgb(240, 224, 9);
+    background: yellow;
 }
