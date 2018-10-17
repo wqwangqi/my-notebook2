@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        v-html
+        v-text
+        v-bind
+        v-if
+        v-else-if
+        v-else
+        v-show
+        v-on
+        v-model
+        [v-cloak]
+        v-for
+        v-once
+     -->
+    <div id="app">
+        <input type="text" v-model='name'>
+        <div>{{name}}</div>
+        <!-- v-once第一次进行加载，以后数据改变不会发生改变 -->
+        <div v-once>{{name}}</div>
+        <!-- v-html  => innerHTML   让数据可以识别元素标签 -->
+        <div v-html='p'>{{p}}</div>
+        <!-- v-text  => innerText   让数据可以识别文本 -->
+        <div v-text='p'>{{p}}</div>
+        <!-- v-bind表示动态属性，让标签可以接受vue中的属性变量 -->
+        <a v-bind:href="url" target="_blank">百度</a>
+        <a :href="url" target="view_window">百度</a>
+        <!-- v-if属于将元素从结构中移除【removeChild】 v-show属于用过样式将元素隐藏【display:none】 -->
+        <!-- 如果是频繁让元素进行显示隐藏，我们可以使用v-show，否则可以使用v-if，这样做会减少性能的消耗 -->
+        <br>
+        <hr>
+        你可以控制输入框让if-else显示【1/2】
+        <div v-if='name==1'>{{name}}</div>
+        <div v-else-if='name==2'>{{ary}}</div>
+        <div v-else v-html='p'>{{p}}</div>
+        <hr>
+        <!-- v-show -->
+        <input type="checkbox" v-model='boo'>我是用来让v-show显示或隐藏的
+        <div v-show='boo'>{{name}}</div>
+        <!-- v-on: 事件 -->
+        <div v-on:click='fn'>我是事件</div>
+        <!-- v-for: for循环 => 循环谁就给谁加v-for指令 -->
+        <!-- v-for既可以遍历数组，对象，还可以遍历字符串，数字 -->
+        <ul>
+            <li v-for='(item,index,i) in obj'>
+                {{index}}---{{item}}---{{i}}
+                <!-- 如果是循环嵌套的话，可以用这种方法 -->
+                <!-- <div v-for='i in item'>{{i}}</div> -->
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            name: 'zf',
+            p: '<p>112323</p>',
+            url: 'http://www.baidu.com',
+            boo: true,
+            ary: [1, 2, 3, 4, 5, [7, 8, 9]],
+            num:5,
+            obj:{name:'zf',age:9,sex:[1,2,3]}
+        },
+        // data对象中的数据都放在实例上，也就是this上，可以直接进行调用，例如：this.xxx
+        // 一般情况下methods放入是所有的函数，这里的函数全部都是vue的实例
+        methods: {
+            fn() {
+                this.boo = !this.boo
+            }
+        }
+    })
+</script>

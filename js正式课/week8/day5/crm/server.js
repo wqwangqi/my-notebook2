@@ -112,6 +112,19 @@ let server = http.createServer((req, res) => {
         dataSuc.data = data
         res.end(JSON.stringify(dataSuc));
     }
+    
+    if(pathname==='/findInfo'){
+        let data = JSON.parse(fs.readFileSync(dataUrl,'utf-8'));
+        for ( var i=0 ; i<data.length ; i++) {
+            if(data[i]['name']== query.name){
+                var hudr = data.splice(i,1);
+                break;
+            }
+       }
+       dataSuc.data = hudr;
+       res.end(JSON.stringify(dataSuc))
+    } 
+
 })
 
 
