@@ -21,8 +21,8 @@
         <th>英语成绩</th>
       </tr>
     </thead>
-    <tbody v-draggable>
-      <tr v-for="l in lists">
+    <tbody v-draggable="lists">
+      <tr v-for="l in lists" :key="l.id">
         <td>{{l.name}}</td>
         <td>{{l.chinese}}</td>
         <td>{{l.math}}</td>
@@ -34,9 +34,20 @@
     new Vue({
       el:'#app',
       directives:{
-        draggable(el,bindings,vnode){
+        // el是当前元素 value是当前的传进来的值 vnode 虚拟节点
+        draggable(el,{value},vnode){
           Sortable.create(el,{
-            animation:200
+            animation:200,
+            onEnd:(e)=>{ // 拖拽完毕后
+              let oldIndex = e.oldIndex;
+              let newIndex = e.newIndex;
+              let current = value[oldIndex];// 当前拖拽的那个人 
+              // 把当前这一项从数组中删除这一项
+              value.splice(oldIndex,1);
+              // 把这一项添加到新的位置上
+              value.splice(newIndex,0,current);
+              // 最后可以拿到拖拽后的数据 value
+            }
           });
         }
       },
