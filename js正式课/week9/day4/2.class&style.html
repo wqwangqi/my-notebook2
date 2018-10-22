@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .a {
+            font-size: 30px;
+            color: purple;
+        }
+
+        .b {
+            font-size: 50px;
+            color: green;
+        }
+
+        .c {
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="a b c">普通样式</div>
+        <div class="c" :class="classAry">数据类名</div>
+        <div :class="{a:classA,b:'b'}">数据类名</div>
+        <div :class="computedClass">数据类名</div>
+
+        <div style="fontSize:30px">样式A</div>
+        <div :style='styleA'>样式B</div>
+        <div :style='styleB'>样式C</div>
+        <div :style='{color:"yellow",...styleB}'>样式D</div>
+        <div :style='[styleA,styleC]'>样式E</div>
+    </div>
+</body>
+
+</html>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            classAry:['a','b'],
+            classA:true,
+            styleA:{fontSize:'30px'},
+            styleB:{
+                fontSize:'30px',
+                background:'green',
+            },
+            styleC:{color:'orange'},
+        },
+        computed:{
+            computedClass(){
+                return Math.random()>0.5?'a':'b'
+            }
+        }
+    })
+</script>

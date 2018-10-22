@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+
+</body>
+
+</html>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+    let obj = '<h1>wangqi</h1>'
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '',
+        },
+        // 初始化实例，添加一些方法
+        beforeCreate() {
+            debugger
+        },
+        // 创建实例，添加data属性
+        created() {
+            // data数据加载之后，可以被ajax携带的发送【post】=>{name:this.msg} 【get】
+            // 创建完实例之后，我们一般情况下在这个函数中发送ajax请求
+            debugger
+        },
+        // 会进行判断，判断是否有el或者$mount挂载元素
+        // 如果有的话【挂载元素】在进行判断：是否有内部的template属性【替代根元素】，或者外部html标签【#app】作为模板【template】
+        // 保证有了以后进行dom渲染
+        //template:'<h1></h1>'
+        
+        // 保证上面渲染成功，执行这个钩子函数
+        beforeMount(){
+
+        },
+        // 挂载元素
+        mounted(){
+            // 在这个函数当中，我们可以操作这个根元素内部的标签
+            // 通胀我们在这个函数中操作dom
+            //this.$refs.xxx.style.color= xxx
+            // dom-diff  :计算让dom操作性能消耗的更少
+            console.log(this.$refs);
+            
+        },
+
+        // 所有数据发生改变都会触发
+        // 数据发生改变，执行这个方法
+        beforeUpdate(){
+
+        },
+        // 当虚拟dom重新渲染之后再执行updated
+        updated(){
+
+        },
+        // 实例销毁之前
+        beforeDestroy(){
+            // 清楚一些绑定的事件、定时器、变量堆内存、删除无用的数据
+        },
+        // 【移除所有的子组件、坚挺着、事件】实例销毁之后
+        destroyed(){
+            // 数据发生改变，页面不能识别
+        }
+
+
+    }).$mount('#app')
+    /* 
+            vue创建也有生命周期的过程，包括从数据渲染，编译模板，实例挂载dom元素，更新数据，卸载根元素，都会触发一系列生命周期不同时期的钩子函数
+
+            beforeCreate created     // 实例初始化         实例创建之后   调用
+            beforeMount mounted      // 实例挂载dom之前    挂载dom之后    调用
+            beforeUpdate updated     // 数据更新之前       数据更新之后   调用
+            beforeDestroy destroyed  // 实例销毁之前       实例销毁之后   调用
+
+            // 创建vue，1.给实例添加方法
+         */
+</script>

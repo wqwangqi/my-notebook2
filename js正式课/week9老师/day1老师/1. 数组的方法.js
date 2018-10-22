@@ -11,13 +11,13 @@
     reduce
 */
 var ary = [4,5,6,7,8,'99'];
-/* ary.forEach((item,index,input) => {
+ary.forEach((item,index,input) => {
     // console.log(this);// window
 },1);
 
 [1].forEach(function(item,index,input)  {
     console.log(this);// window
-},1); */
+},1);
 
 // map 将回调函数的返回值组成一个新的数组
 /* var newAry = ary.map((item,index)=>{
@@ -62,24 +62,24 @@ console.log(newAry); */
 
 // find 查找 => 找到符合条件的值并返回
 // 1. 遍历数组 2. 判断回调函数返回值的布尔值，返回true，停止遍历，直接将这个值【遍历数组当前项的值】返回
-var newAry = ary.find((item,index)=>{
+/* var newAry = ary.find((item,index)=>{
     return item>6
 })
-console.log(newAry);
+console.log(newAry); */
 
 //some 找true =>遍历数组中如果回调函数返回值计算为true，停止遍历，整体返回true；全部遍历后，都没有返回true，整体返回为false
-var newAry = ary.some((item,index)=>{
+/* var newAry = ary.some((item,index)=>{
     return item>2
 })
-console.log(newAry,ary);
+console.log(newAry,ary); */
 
 // every 找false => 1. 遍历数组，2. 如果回调函数返回值计算结果为false，停止遍历，整体返回false
 // 如果计算结果为true，继续进行遍历，直到找到false；【当遍历结束后，全部返回为true，整体返回true】,否则为true
 
-var newAry = ary.every((item,index)=>{
+/* var newAry = ary.every((item,index)=>{
     return item<5
 })
-console.log(newAry);
+console.log(newAry); */
 
 // reduce 返回两次计算后的结果
 // 1. 遍历数组 2. 将回调函数返回值作为第一次的计算结果【return后面的值】
