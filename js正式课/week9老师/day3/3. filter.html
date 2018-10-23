@@ -8,18 +8,18 @@
 </head>
 <body>
     <div id='app'>
-        <!-- filters必须搭配管道符来使用，第二个值为filters当中执行的方法，默认将前面一个值当作参数传进去 ，这个方法加于不加括号都回执行，加括号是表明给其传参,函数当中必须有return ,表示计算后的结果展示到页面中-->
-        {{ msg | toFixed(3) | addName }}
+        <!-- filters必须搭配管道符来使用，第二个值为filters当中执行的方法，默认将前面一个值当作参数传进去 ，这个方法加于不加括号都会执行，加括号是表明给其传参,函数当中必须有return ,表示计算后的结果展示到页面中-->
+        {{ msg | toFixed(10) | addName }}
         {{ msg | toFixed }}
         时间：{{hour | toZero}} : {{minute | toZero}} : {{second | toZero}}
     </div>
 
     <div id='box'>
         {{ msg | toFixed(5) }}
-        <haha></haha>
-        <haha></haha>
-        <haha></haha>
-        <haha></haha>
+        <ha-ha></ha-ha>
+        <ha-ha></ha-ha>
+        <ha-ha></ha-ha>
+        <ha-ha></ha-ha>
     </div>
 
     <template>
@@ -33,7 +33,7 @@
     Vue.filter('toFixed',function(val,value){
         return val.toFixed( value|| 2 )
     })
-    Vue.component('haha',{
+    Vue.component('ha-ha',{
         template:'<h1>haha</h1>'
     })
 
