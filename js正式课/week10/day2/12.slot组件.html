@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <child>
+            <header slot='title'>这是我的毕业论文标题：xxx</header>
+            <!-- 通过slot组件，可以轻松实现将我们定义的标签插入到组件模板当中 -->
+            <div>57575757</div>
+            <div>45454544454544</div>
+            <footer slot='username'>署名：xxx</footer>
+            4545454
+            <div>45454544454544</div>
+            <div>45454544454544</div>
+        </child>
+    </div>
+    <template id="box">
+        <div>
+            123456
+            <!-- slot就相当于一个插槽，会将子组件child中的所有标签都插入到slot里面 -->
+            <slot name='title'></slot>
+            <!-- 我可以在模板当中开辟很多的插槽，让不同的标签元素超如到不同的插槽当中 -->
+            <slot name='default'></slot>
+            <slot name='username'></slot>
+        </div>
+    </template>
+</body>
+</html>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+    let child = {
+        template:'#box'
+    }
+    let vm = new Vue({
+        el:'#app',
+        components:{
+            child
+        }
+    })
+</script>

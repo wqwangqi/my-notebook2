@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{name}}
+        <!-- 使用冒号将属性值变成动态属性 -->
+        <child :data='name'></child>
+    </div>
+    <template id="box">
+        <!-- template里面定义的标签，有且只能有一个 -->
+        <div>
+            {{data}}
+            <p v-for='item in msg' ref='aryP'>{{item}}</p>
+        </div>
+    </template>
+</body>
+
+</html>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+    /* 
+        在vue当中属于单项数据六，只能通过父级向子级传输数据，通过属性props来设置
+        想要实现子级向父级传输数据，我们需要调用父级的方法，将参数【子级的参数】回传【父级方法执行，形参对应子级的数据】
+    */
+    let child = {
+        data() {
+            return {
+                msg: [1, 2, 3]
+            }
+        },
+        // 我们可以通过props拿到父组件传递过来的值data,这时候data变成子组件child的一个属性，可以通过this.data拿到这个值
+        // props:['data'],
+        // 如果props是一个对象，我们可以对父级传递的数据进行校验，相当于一个拦截器
+        props: {
+            //data:Number
+            type: [Number, String, Boolean, Function, Object, Array, Symbol],
+            default: 'wangqi', //如果没传就用defalut，传了值就用传的值
+            require: true, //必须传值，不传报错
+        },
+        template: '#box',
+    };
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            name: 'CHINA'
+        },
+        mounted() {
+
+        },
+        //注册
+        components: {
+            child
+        }
+    })
+    /* 
+        想要将父级的数据传递给子组件，通过子组件的标签进行传递
+    */
+</script>
