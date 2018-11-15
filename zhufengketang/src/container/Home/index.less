@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+.home-header{
+    width: 100%;
+    height: 56px;
+    position: fixed;
+    background: black;
+    z-index: 999;
+    img{
+        width: 35%;
+        margin-top:5px;
+        margin-left:5px;
+    }
+    i{
+        color:#fff;
+        float: right;
+        margin:20px 15px 0 0; 
+    }
+    .header-course{
+        list-style: none;
+        position: fixed;
+        top:56px;
+        width: 100%;
+        left:0;
+        li{
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-top:1px solid #fff;
+            background: black;
+            color: #fff;
+        }
+    }
+}
+// 下面是页面home主体的部分
+// 轮播图
+.home-content{
+    position: absolute;
+    top: 56px;
+    width: 100%;
+    left: 0;
+    bottom: 56px;
+    overflow-y: scroll;
+    .home-swipe{
+        width: 100%;
+        height: 200px;
+        position: relative;
+        div{
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .focus{
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            height: 15px;
+            text-align: center;
+            span{
+               display: inline-block;
+               width: 15px;
+               height: 15px;
+               border-radius: 50%;
+               background: #eee;
+               margin-right: 2px;
+               &.active{
+                   background: yellow;
+               }
+            }
+        }
+    }
+}
+
+// 课程页列表
+.home-lesson{
+    background: wheat;
+    padding: 5px;
+    .home-title{
+        padding-left: 5px;
+        font-size: 18px;
+    }
+    .lesson{
+        list-style: none;
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 5px;
+        img{
+            width: 100%;
+            height: 200px;
+        }
+        p{
+            text-align: center;
+            height: 25px;
+            line-height: 25px;
+            &.price{
+                color: red;
+            }
+        }
+    }
+}

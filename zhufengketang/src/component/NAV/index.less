@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav-footer{
+    position: fixed;
+    height: 53px;
+    width: 100%;
+    left:0;
+    bottom: 0;
+    border-top:1px solid #eeeeee;
+    display: flex;
+    a{
+        color: green;
+        display: flex;
+        flex:1;
+        flex-direction: column;    //控制子元素排雷方式，  column数值排列
+        align-items: center;  //水平居中
+        justify-content: center;  //竖直方向距中
+        text-decoration: none;
+        &.active{
+            color: purple
+        }
+    }
+    i{
+        font-size: 25px;
+        color: green;
+    }
+}

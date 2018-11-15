@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <home></home>
+        <child></child>
+    </div>
+</body>
+</html>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script src="./node_modules/vuex/dist/vuex.js"></script>
+<script>
+    const store = new Vuex.Store({
+        state:{
+            count:0,
+            ary:[1,2,3,4]
+        },
+        mutations:{
+            add(state){
+                state.count++
+            },
+            min(state){
+                state.count--
+            },
+            remove(state,val){
+                state.ary = state.ary.filter((item,index)=>{return item!==val})
+            }
+        }
+    })
+    let home = {
+        template:`<div>
+            {{$store.state.count}}
+            <button @click='fn'>+</button>
+            <button @click='f'>-</button>
+            <button @click='h'>删除</button>
+        </div>`,
+        methods:{
+            fn(){
+                this.$store.commit('add')
+            },
+            f(){
+                this.$store.commit('min')
+            },
+            h(){
+                this.$store.commit('remove',2)
+            }
+        }
+    }
+    let child = {
+        computed:{
+            ary(){
+                return this.$store.state.ary;
+            }
+        },
+        template:`<div>
+            <li v-for='a in ary'>{{a}}</li>
+        </div>`
+    }
+   let vm = new Vue({
+       el:'#app',
+       data:{},
+       store,
+       components:{
+           home,
+           child
+       }
+   })
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            /* display:table-cell; 
+            text-align:center;
+            vertical-align:middle; */
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            width: 100%;
+            height: 100%;
+
+            position: relative;
+        }
+        div{
+            background: yellow;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left:50%;
+            top: 50%;
+            transform: translate(-50%,-50%)
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    
+</body>
+</html>
+<script>
+    let ary = [{a:1,b:2},{a:1,b:3},{a:1,b:4},{a:1,b:2},{a:1,b:3},{a:3,b:2}]
+    let ary1 = [];
+    for(var i=0;i<ary.length;i++){
+    　　var flag = true;
+    　　for(var j=0;j<ary1.length;j++){
+    　　　　if(ary[i].a == ary1[j].a&&ary[i].b == ary1[j].b){
+    　　　　　　flag = false;
+    　　　　};
+    　　}; 
+    　　if(flag){
+            ary1.push(ary[i]);
+    　　};
+    };
+    console.log(ary1);
+    
+</script>
